@@ -9,8 +9,8 @@ export const checkParams = (params) => {
   if(!shift) {
     handleError('Shift parameter should be provided', 9);
   }
-  if (!parseInt(shift, 10)) {
-    handleError('Shift parameter is not positive integer', 9);
+  if (isNaN(shift)) {
+    handleError('Shift parameter is not an integer type', 9);
   }
   if (!action) {
     handleError('Action parameter should be provided', 9);

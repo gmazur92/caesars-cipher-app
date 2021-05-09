@@ -34,7 +34,7 @@ export const writeStream = (file) => {
   }
 
   const fullFilePath = path.resolve(file);
-  const ws = fs.createWriteStream(fullFilePath, {flags:'a'});
+  const ws = fs.createWriteStream(fullFilePath, {flags: 'a'});
 
   ws.on('error', (err) => {
     handleError(err, 1);
