@@ -21,7 +21,7 @@ export const caesarCipher = (string, shift, action) => {
   for (let i = 0; i < string.length; i++) {
     const charCode = string.charCodeAt(i);
     if (
-      (charCode < CHARCODES.SMALL_START || charCode > CHARCODES.SMALL_END) ||
+      (charCode < CHARCODES.CAPITAL_START || charCode > CHARCODES.SMALL_END) ||
       (charCode > CHARCODES.CAPITAL_END && charCode < CHARCODES.SMALL_START)
     ) {
       result += string[ i ];
