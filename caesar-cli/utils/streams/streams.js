@@ -5,13 +5,9 @@ import { caesarCipher } from '../caesarCipher.js';
 import { Transform } from 'stream';
 
 export const readStream = (file) => {
-  if (!file) {
-    return process.stdin;
-  }
   let emptyFile = true;
   const fullFilePath = path.resolve(file);
-  const rs = fs.createReadStream(fullFilePath, 'utf-8');
-
+  const rs = fs.createReadStream(fullFilePath, {flags: 'r'});
   rs.once('data', () => {
     emptyFile = false;
   });
@@ -21,23 +17,21 @@ export const readStream = (file) => {
       handleError('Input file is empty', 9);
     }
   });
-
   rs.on('error', (err) => {
-    handleError(err, 1);
+    if (err) {
+      handleError('Either the file does not exist or there is a permission problem', 9);
+    }
   });
   return rs;
 };
 
 export const writeStream = (file) => {
-  if (!file) {
-    return process.stdout;
-  }
-
   const fullFilePath = path.resolve(file);
-  const ws = fs.createWriteStream(fullFilePath, {flags: 'a'});
-
+  const ws = fs.createWriteStream(fullFilePath, {flags: fs.constants.O_WRONLY | fs.constants.O_APPEND});
   ws.on('error', (err) => {
-    handleError(err, 1);
+    if (err) {
+      handleError('Either the file does not exist or there is a permission problem', 9);
+    }
   });
   return ws;
 };

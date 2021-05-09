@@ -11,7 +11,7 @@ program.storeOptionsAsProperties(false).
   option('-o, --output <type>', 'Enter the output file').
   action(
     () => {
-      const params = program.opts()
+      const params = program.opts();
       checkParams(params);
       doPipeline(params);
     },
