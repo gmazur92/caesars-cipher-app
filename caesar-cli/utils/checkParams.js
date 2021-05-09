@@ -34,4 +34,11 @@ export const checkParams = (params) => {
       handleError('Output file doesn\'t exist', 9);
     }
   }
+  if (input && output) {
+    const inputFilePath = path.resolve(input);
+    const outputFilePath = path.resolve(output);
+    if (inputFilePath === outputFilePath) {
+      handleError('Input and Output files can\'t be the same', 9);
+    }
+  }
 };
