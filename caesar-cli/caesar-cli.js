@@ -6,7 +6,7 @@ const program = new Command();
 
 program.storeOptionsAsProperties(false).
   option('-a, --action <type>', 'Choose the action: encode or decode').
-  option('-s, --shift <type>', 'Enter a shift: encode or decode').
+  option('-s, --shift <type>', 'Enter a shift: positive or negative integer').
   option('-i, --input <type>', 'Enter the input file').
   option('-o, --output <type>', 'Enter the output file').
   action(
