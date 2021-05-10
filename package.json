@@ -1,0 +1,23 @@
+{
+  "name": "caesars-cipher-app",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "type": "module",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/gmazur92/caesars-cipher-app.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/gmazur92/caesars-cipher-app/issues"
+  },
+  "homepage": "https://github.com/gmazur92/caesars-cipher-app#readme",
+  "dependencies": {
+    "commander": "^7.2.0"
+  }
+}
