@@ -9,14 +9,18 @@ The tool is only works with English alphabet (both uppercase and lowercase), all
 
 1. Clone the repository into your system:
  ```bash
- $ git clone git@github.com:gmazur92/caesars-cipher-app.git
+ $ git clone git@github.com:gmazur92/caesars-cipher-app.git --branch caesars-cipher-task
   ```
 2. Go into the newly created `caesars-cipher-app` directory.
 3. Install dependencies:
 ```bash
 $ npm install
 ```
-4. **Caesar cipher CLI tool** is ready for use.
+4. Go into caesar-cli directory
+```bash
+$ cd caesar-cli
+```
+5. **Caesar cipher CLI tool** is ready for use.
 
 ## Usage
 
@@ -33,7 +37,7 @@ The tool may accept 4 different parameters:
 
 1. **Encode**:
 ```bash
-$ node caesars-cipher-app -a encode -s 7 -i "../input.txt" -o "../output.txt"
+$ node caesar-cli -a encode -s 7 -i "../input.txt" -o "../output.txt"
 ```
 > input.txt
 > `This is secret. Message about "_" symbol!`
@@ -43,7 +47,7 @@ $ node caesars-cipher-app -a encode -s 7 -i "../input.txt" -o "../output.txt"
 
 2. **Decode**:
 ```bash
-$ node caesars-cipher-app -a decode -s 7 -i "../input.txt" -o "../output.txt"
+$ node caesar-cli -a decode -s 7 -i "../input.txt" -o "../output.txt"
 ```
 
 > input.txt
@@ -53,7 +57,7 @@ $ node caesars-cipher-app -a decode -s 7 -i "../input.txt" -o "../output.txt"
 > `This is secret. Message about "_" symbol!`
 3. **Negative shift**:
 ```bash
-$ node caesars-cipher-app -a encode -s -1 -i "../input.txt" -o "../output.txt"
+$ node caesar-cli -a encode -s -1 -i "../input.txt" -o "../output.txt"
 ```
 > input.txt
 > `This is secret. Message about "_" symbol!`
